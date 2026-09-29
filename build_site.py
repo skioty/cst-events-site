@@ -8,7 +8,7 @@ def load_events(path):
 
 def upcoming(events, today):
     future = [e for e in events if e["date"] >= today]
-    return future
+    return sorted(future, key=lambda e: e["date"])
 
 def render(events):
     items = "\n".join(
